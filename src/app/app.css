@@ -1,0 +1,390 @@
+.layout {
+  min-height: 100vh;
+}
+
+.site-content {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0 0 0 8px;
+  font-size: 18px;
+}
+
+.nav-menu {
+  line-height: 64px;
+}
+
+/* 美化导航菜单项 */
+.nav-menu .ant-menu-item {
+  padding: 0 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+  margin: 0 4px;
+}
+
+.nav-menu .ant-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu .ant-menu-item-selected {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu .ant-menu-submenu {
+  padding: 0 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+  margin: 0 4px;
+}
+
+.nav-menu .ant-menu-submenu:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-menu .ant-menu-submenu-selected {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* 媒体查询 - 平板和手机适配 */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0 16px;
+  }
+}
+
+/* 页面通用样式 */
+.page-title {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.page-description {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* 页头动画效果 */
+.site-header {
+  will-change: transform, background, box-shadow;
+}
+
+.site-header.scrolled {
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+.site-header .logo {
+  will-change: transform;
+}
+
+/* 页头响应式优化 */
+@media (max-width: 1200px) {
+  .site-header {
+    padding: 0 20px !important;
+  }
+
+  .nav-menu {
+    min-width: 450px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .site-header {
+    padding: 0 16px !important;
+  }
+
+  .nav-menu {
+    min-width: 350px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0 16px !important;
+    height: 56px !important;
+  }
+
+  .desktop-menu {
+    display: none !important;
+  }
+}
+
+/* 主页动画效果 */
+.landing-page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 悬浮动画 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 滚动动画 */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 悬浮元素动画 */
+.floating-element {
+  will-change: transform;
+}
+
+.floating-element:hover {
+  animation-play-state: paused;
+}
+
+/* 英雄区域动画增强 */
+.hero-section {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-section .ant-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-section .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 统计卡片动画 */
+.stats-section .ant-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.stats-section .ant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* 脉冲动画 */
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* 渐变背景动画 */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animation {
+  background: linear-gradient(-45deg, #1890ff, #10239e, #722ed1, #52c41a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* 加载动画 */
+.loading-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1890ff;
+  font-size: 14px;
+  animation: pulse 1.5s infinite;
+}
+
+/* 响应式动画优化 */
+@media (max-width: 768px) {
+  .animate-on-scroll {
+    transform: translateY(30px);
+  }
+
+  .floating-element {
+    animation-duration: 4s !important;
+  }
+
+  .hero-section {
+    animation-duration: 1.5s;
+  }
+}
+
+/* 降低动画强度 - 考虑用户偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .floating-element,
+  .animate-on-scroll,
+  .hero-section {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Landing Page动画效果 */
+.landing-page .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.landing-page .animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 功能卡片悬停效果 */
+.landing-page .feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 按钮悬停效果 */
+.landing-page button.ant-btn:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* 统计数字动画效果 */
+.landing-page .stats-section .ant-card {
+  transition: all 0.3s ease;
+}
+
+.landing-page .stats-section .ant-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 用户评价卡片悬停效果 */
+.landing-page .testimonials-section .ant-card {
+  transition: all 0.3s ease;
+}
+
+.landing-page .testimonials-section .ant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 移动端适配优化 */
+@media (max-width: 768px) {
+  .landing-page .hero-section {
+    padding: 60px 16px;
+  }
+
+  .landing-page .hero-section .ant-typography {
+    font-size: 32px !important;
+  }
+
+  .landing-page .advantages-section,
+  .landing-page .competition-section,
+  .landing-page .cta-section {
+    padding: 40px 16px;
+  }
+}

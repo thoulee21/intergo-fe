@@ -1,0 +1,488 @@
+/* 面试页面布局样式 */
+.interview-page {
+  min-height: 100vh;
+}
+
+/* 新增：两列布局容器 */
+.interview-layout {
+  display: flex;
+  gap: 24px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.interview-main-content {
+  flex: 1;
+  /* 避免flex子项溢出 */
+  min-width: 0;
+}
+
+.interview-sidebar {
+  width: 320px;
+  position: sticky;
+  top: 76px;
+  height: fit-content;
+  align-self: flex-start;
+}
+
+.interview-header {
+  background: transparent;
+  height: auto;
+  line-height: normal;
+}
+
+.interview-content {
+  padding: 0 24px 48px;
+  margin: 0 auto;
+}
+
+.page-title-row {
+  margin-bottom: 24px;
+}
+
+.interview-main-row {
+  margin-bottom: 32px;
+}
+
+/* 固定卡片样式 */
+.sticky-card {
+  position: sticky;
+  top: 24px;
+}
+
+/* 共用卡片样式 */
+.video-card,
+.question-card,
+.answer-card,
+.progress-card,
+.feedback-card,
+.evaluation-card,
+.tips-card,
+.final-evaluation-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-card:hover,
+.question-card:hover,
+.answer-card:hover,
+.progress-card:hover,
+.feedback-card:hover,
+.evaluation-card:hover,
+.tips-card:hover,
+.final-evaluation-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 视频卡片样式 */
+.video-card {
+  height: 100%;
+}
+
+.video-container {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.video-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 视频状态指示器 */
+.video-status {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  margin-right: 8px;
+}
+
+.status-dot.active {
+  background-color: #52c41a;
+  box-shadow: 0 0 8px rgba(82, 196, 26, 0.5);
+}
+
+/* 进度卡片样式 */
+.progress-card {
+  margin-bottom: 24px;
+}
+
+.progress-info {
+  padding: 8px 0;
+}
+
+.progress-counter {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1677ff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.progress-counter .divider {
+  font-size: 24px;
+  color: #8c8c8c;
+  margin: 0 4px;
+}
+
+.progress-counter .total-questions {
+  color: #8c8c8c;
+}
+
+/* 面试技巧样式 */
+.interview-tips {
+  margin-top: 16px;
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.tip-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #1677ff;
+}
+
+.tip-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tip-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tip-list li:last-child {
+  margin-bottom: 0;
+}
+
+.recording-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recording-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #f5222d;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 反馈内容样式 */
+.feedback-content {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.feedback-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.feedback-content::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 3px;
+}
+
+.feedback-content::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 3px;
+}
+
+.feedback-content::-webkit-scrollbar-thumb:hover {
+  background-color: #bfbfbf;
+}
+
+/* 评估结果部分样式 */
+.evaluation-row,
+.final-evaluation-row {
+  margin-top: 24px;
+}
+
+/* 加载动画组件样式 */
+.loading-tips-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-animation {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-wave {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 120px;
+  height: 50px;
+}
+
+.loading-wave-bar {
+  width: 12px;
+  background-color: #1677ff;
+  border-radius: 10px;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.loading-wave-bar:nth-child(2) {
+  animation-delay: 0.1s;
+  background-color: #36cfc9;
+}
+
+.loading-wave-bar:nth-child(3) {
+  animation-delay: 0.2s;
+  background-color: #52c41a;
+}
+
+.loading-wave-bar:nth-child(4) {
+  animation-delay: 0.3s;
+  background-color: #faad14;
+}
+
+.loading-wave-bar:nth-child(5) {
+  animation-delay: 0.4s;
+  background-color: #fa541c;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    height: 15px;
+  }
+
+  50% {
+    height: 50px;
+  }
+}
+
+/* 响应式适配 */
+@media (max-width: 1200px) {
+  .sticky-card {
+    position: static;
+  }
+
+  .progress-card,
+  .feedback-card {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .interview-content {
+    padding: 0 16px 32px;
+  }
+
+  .video-card,
+  .progress-card {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .interview-content {
+    padding: 0 12px 24px;
+  }
+
+  .recording-indicator {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .recording-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .progress-counter {
+    font-size: 28px;
+  }
+}
+
+.interview-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.video-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.recording-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ff4d4f;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.markdown-content {
+  line-height: 1.8;
+}
+
+/* 虚拟人播放器样式 */
+.avatar-player-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.avatar-player-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.avatar-player-card .ant-card-head {
+  border-bottom: none;
+}
+
+.avatar-player-card .ant-card-head-title {
+  font-weight: 600;
+}
+
+.avatar-control-switch {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.avatar-control-switch .ant-switch-checked {
+  background-color: #667eea;
+}
+
+.avatar-video-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.avatar-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.avatar-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.avatar-error-state {
+  text-align: center;
+  padding: 20px;
+  color: #ff4d4f;
+}
+
+.avatar-placeholder {
+  text-align: center;
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .avatar-video-container {
+    height: 250px;
+  }
+
+  .avatar-control-switch {
+    padding: 8px 12px;
+  }
+}

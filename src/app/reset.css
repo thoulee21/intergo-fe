@@ -1,0 +1,40 @@
+/* 全局隐藏滚动条样式 */
+* {
+  /* 隐藏滚动条但保持滚动功能 - Webkit浏览器 (Chrome, Safari, Edge) */
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE 和 Edge */
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  /* Webkit浏览器 */
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 确保body也隐藏滚动条 */
+  overflow-x: hidden;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}

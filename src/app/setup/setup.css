@@ -1,0 +1,8 @@
+.selected-scenario {
+  border: 2px solid #1890ff;
+  box-shadow: 0 0 10px rgba(24, 144, 255, 0.3);
+}
+
+.text-center {
+  text-align: center;
+}

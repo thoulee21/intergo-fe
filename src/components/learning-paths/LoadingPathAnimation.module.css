@@ -1,0 +1,124 @@
+.loadingContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.loadingCard {
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.spinnerSection {
+  margin-bottom: 1.5rem;
+}
+
+.loadingTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #1890ff;
+  font-weight: bold;
+}
+
+.pathProgress {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+  padding: 0 1rem;
+}
+
+.pathLine {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 4px;
+  /* 初始宽度为0，由JS控制 */
+  width: 0%;
+  background: linear-gradient(90deg, #1890ff 0%, #52c41a 100%);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.milestone {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.milestonePoint {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #1890ff;
+  margin-bottom: 0.5rem;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.3);
+}
+
+.milestone p {
+  font-size: 0.85rem;
+  color: #333;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.milestone.active .milestonePoint {
+  box-shadow: 0 0 0 4px rgba(24, 144, 255, 0.2);
+}
+
+/* 处理活动状态的文本 */
+.milestone.active p {
+  font-weight: 700;
+}
+
+.loadingMessage {
+  margin-top: 2rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .pathProgress {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem;
+  }
+
+  .pathLine {
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: auto;
+  }
+
+  .milestone {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .milestonePoint {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
